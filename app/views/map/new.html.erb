@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<style>
+html { width: 100%; height: 100%; }
+body { width: 100%; height: 100%; }
+#map { width: 100%; height: 90%; }
+
+</style>
+
+<div id="map"></div>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh7zzxsUzcplpoidepQv8Wb6Bhe794pdo&callback=initMap"></script>
+<ul class="btn-line">
+  <li>
+    <%= form_for @gool_point,url: root_new_path do |f| %>
+    　lat<%= f.text_field  :lat, :value =>  "",id: "lat"%>
+      lng<%= f.text_field :lng, :value =>  "",id: "lng"%>
+      <%= f.submit "目的地選択" ,class: 'btn  btn-new'%>
+     <%end%>
+
+     <!-- document.getElementById('new_goolpoint').lat.value = marker.getPosition().lat();
+     document.getElementById('new_goolpoint').lng.value  = marker.getPosition().lng(); -->
+   </li>
+</ul>
+<script>
+
+//マウスオーバーで情報ウィンドウを表示させる
+function map_canvas() {
+    //マーカーの情報
+
+
+    var data = new Array();
+
+//ここ
+    var lat0 = <%= raw @start.lat %>;
+    var lng0 = <%= raw @start.lng %>;
+    var name0 = <%= raw @start.name.to_json %>;
+
+    data.push({
+    lat: lat0,
+    lng: lng0,
+    content: name0
+     });
+
+    <% @points.each do |point| %>
+     var lat = <%= raw point.lat %>;
+     var lng = <%= raw point.lng %>;
+     var name = <%= raw point.name.to_json %>;
+
+    data.push({
+        lat: lat,
+        lng: lng,
+        content: name
+    });
+
+    <% end %>
+    //初期位置に、上記配列の最初の緯度経度を格納
+    var latlng = new google.maps.LatLng(data[0].lat, data[0].lng);
+    var opts = {
+        zoom: 10,
+        center: latlng,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    var map = new google.maps.Map(document.getElementById("map"), opts);
+
+    var markers = new Array();
+    //マーカーを配置するループ
+    for (i = 0; i < data.length; i++) {
+        markers[i] = new google.maps.Marker({
+            position: new google.maps.LatLng(data[i].lat, data[i].lng),
+            map: map
+        });
+        markerInfo(markers[i], data[i].content);
+    }
+}
+
+function markerInfo(marker, name) {
+    google.maps.event.addListener(marker, 'mouseover', function (event) {
+        new google.maps.InfoWindow({
+            content: name
+        }).open(marker.getMap(), marker);
+
+        // document.form.Latitude.value = marker.getPosition().lat();
+
+        var form = document.getElementById('new_goolpoint');
+
+        form.lat.value = marker.getPosition().lat();
+        form.lng.value  = marker.getPosition().lng();
+
+    });
+}
+
+//地図描画を実行
+google.maps.event.addDomListener(window, 'load', map_canvas);
+
+
+
+
+
+</script>
+
+
+
+
+</body>
+</html>
