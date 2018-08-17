@@ -17,8 +17,8 @@ body { width: 100%; height: 100%; }
 <ul class="btn-line">
   <li>
     <%= form_for @gool_point,url: root_new_path do |f| %>
-    　lat<%= f.text_field  :lat, :value =>  "",id: "lat"%>
-      lng<%= f.text_field :lng, :value =>  "",id: "lng"%>
+    　lat<%= f.text_field  :lat, :value =>  "",id: "lat"%><br>
+      lng<%= f.text_field :lng, :value =>  "",id: "lng"%><br>
       <%= f.submit "目的地選択" ,class: 'btn  btn-new'%>
      <%end%>
 
