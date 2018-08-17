@@ -79,7 +79,7 @@ function map_canvas() {
 }
 
 function markerInfo(marker, name) {
-    google.maps.event.addListener(marker, 'mouseover', function (event) {
+    google.maps.event.addListener(marker, 'click', function (event) {
         new google.maps.InfoWindow({
             content: name
         }).open(marker.getMap(), marker);
