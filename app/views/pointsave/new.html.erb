@@ -9,7 +9,7 @@
 <style>
 html { width: 100%; height: 100%; }
 body { width: 100%; height: 100%; }
-#map { width: 60%; height: 90%; }
+#map { width: 100%; height: 90%; }
 
 </style>
 
@@ -38,7 +38,7 @@ function map_canvas() {
     //初期位置に、上記配列の最初の緯度経度を格納
     var latlng = new google.maps.LatLng(data[0].lat, data[0].lng);
     var opts = {
-        zoom: 8,
+        zoom: 11,
         center: latlng,
         mapTypeId: google.maps.MapTypeId.ROADMAP
     };
