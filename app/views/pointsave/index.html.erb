@@ -24,9 +24,9 @@
   <ul class="btn-line">
   <li>
     <%= form_for @pointsave,url: pointsave_index_path do |f| %>
-    　lat<%= f.text_field :lat, :value =>  "",id: "lat"%><br>
-      lng<%= f.text_field :lng, :value =>  "",id: "lng"%><br>
-        name<%= f.text_field :name, :value =>  "",id: "name" %>
+    　<table><tr><td>lat<%= f.text_field :lat, :value =>  "",id: "lat"%></td>
+      <td>lng<%= f.text_field :lng, :value =>  "",id: "lng"%></td>
+        <td>name<%= f.text_field :name, :value =>  "",id: "name" %></td></tr></table>
       <%= f.submit "登録" ,class: 'btn  btn-new'%>
     <%end%>
   </li>
