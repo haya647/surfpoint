@@ -14,7 +14,7 @@
       padding: 0;
     }
     #map {
-      height: 80%;
+      height: 90%;
       width: 100%;
     }
   </style>
@@ -22,10 +22,7 @@
 <body>
   <div id="map"></div>
   <ul class="btn-line">
-    <li>lat: <span id="lat"></span></li>
-    <li>lng: <span id="lng"></span></li>
-  </ul> <ul class="btn-line">
-      <li>
+  <li>
     <%= form_for @pointsave,url: pointsave_index_path do |f| %>
     　lat<%= f.text_field :lat, :value =>  "",id: "lat"%>
       lng<%= f.text_field :lng, :value =>  "",id: "lng"%>
@@ -33,10 +30,10 @@
       <%= f.submit "登録" ,class: 'btn  btn-new'%>
     <%end%>
   </li>
-  <li >　
-  <%= link_to 'ポイント一覧', "/pointsave/new" , class: 'btn btn-black btn-block'%>
+  <li>
+  <%= link_to 'ポイント一覧', "/pointsave/new" , class: 'btn  btn-new'%>
   </li>
-</ul>
+  </ul>
 
   <script>
     function initMap() {
