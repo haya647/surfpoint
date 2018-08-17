@@ -16,13 +16,13 @@
   <body onload="initialize()" onunload="GUnload()">
 
     <div id="map" style=float:left;></div>
-    <div id="route" style="margin-top: 80px;margin-left: 80px;width: 300px; height: 600px;float:right;;overflow: scroll"></div>
+    <div id="route" style="margin-top: 80px;margin-right: 80px;width: 300px; height: 600px;float:right;;overflow: scroll"></div>
 
 <ul class="btn-line">
 <li>
     <form>
-    from：<input type="text" id="from" size="20" value=" <%= @start.lat %> ,<%= @start.lng %> "/>
-    to：<input type="text" id="to" size="20" value="<%= @gool.lat %> ,<%= @gool.lng %>" />　   　　
+    <li>from：<input type="text" id="from" size="20" value=" <%= @start.lat %> ,<%= @start.lng %> "/></li>
+    <li>to：<input type="text" id="to" size="20" value="<%= @gool.lat %> ,<%= @gool.lng %>" /></li>　   　　
     </form>
   </li>
     <li>
