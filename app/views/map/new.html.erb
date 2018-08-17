@@ -19,7 +19,7 @@ body { width: 100%; height: 100%; }
     <%= form_for @gool_point,url: root_new_path do |f| %>
     　  <li>lat<%= f.text_field  :lat, :value =>  "",id: "lat"%></li>
         <li>lng<%= f.text_field :lng, :value =>  "",id: "lng"%></li>
-      <%= f.submit "目的地選択" ,class: 'btn  btn-new'%>
+        <li><%= f.submit "目的地選択" ,class: 'btn  btn-new'%></li>
      <%end%>
 
      <!-- document.getElementById('new_goolpoint').lat.value = marker.getPosition().lat();
