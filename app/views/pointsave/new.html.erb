@@ -73,7 +73,8 @@ google.maps.event.addDomListener(window, 'load', map_canvas);
            <% end %>
 
            <ul style=float:right;margin:50px;>
-             <%= link_to 'ポイント登録', "/pointsave/index" , class: 'btn btn-black btn-block'%>
+             <li><%= link_to 'ポイント登録', "/pointsave/index" , class: 'btn btn-black btn-block'%></li>
+             <li><input type="button" value="再読込してマーカーを表示" onclick="window.location.reload();" /></li>
            </ul>
           </div>
 </body>
