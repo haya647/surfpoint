@@ -26,7 +26,7 @@
     </form>
   </li>
     <li>
-      <input type=button  class: 'btn btn-black btn-block'id="btn" value="ルート表示" onclick="dispRoute()" />
+      <input type=button  class='btn btn-black btn-block'id="btn" value="ルート表示" onclick="dispRoute()" />
     </li>
     <li>　
     <%= link_to '経路案内開始', "https://maps.google.com/maps?saddr=#{@start.lat},#{@start.lng}&daddr=#{@gool.lat},#{@gool.lng}&dirflg=d" , class: 'btn btn-black btn-block'%>
