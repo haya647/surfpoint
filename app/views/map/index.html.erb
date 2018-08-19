@@ -66,7 +66,7 @@ function markerInfo(marker, name) {
 google.maps.event.addDomListener(window, 'load', map_canvas);
 </script>
 <ul class="btn-line">
-<li><button class='btn  btn-new'onclick="getMyPlace()">現在位置を取得</button></li>
+<li><button　onclick="getMyPlace()">現在位置を取得</button></li>
 <li>
   <%= form_for @current_point,url: map_new_path do |f| %>
   　<%= f.hidden_field :lat, :value =>  "",id: "lat"%>
