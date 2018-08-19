@@ -26,7 +26,7 @@
     </form>
   </li>
     <li>
-      <input type=button class='btn  btn-new'id="btn" value="ルート表示" onclick="dispRoute()" />
+      <input type=button  class: 'btn btn-black btn-block'id="btn" value="ルート表示" onclick="dispRoute()" />
     </li>
     <li>　
     <%= link_to '経路案内開始', "https://maps.google.com/maps?saddr=#{@start.lat},#{@start.lng}&daddr=#{@gool.lat},#{@gool.lng}&dirflg=d" , class: 'btn btn-black btn-block'%>
@@ -64,15 +64,21 @@ function dispRoute() {
 </script>
 <style>
 @media (max-width: 670px) {
-  .btn-line {
-    ul,li{
+  .btn-black {
     width: 40%;
-    display: inline-block;
-    margin-right: 50px;
-    margin: 0px;
-    margin-top: 5px;
+    color: #565656;
+    border: 1px solid #565656;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: 30px;
+    font-size: 15px;
+    background-color: rgba(0,0,0,0.0);
+
+    &:hover {
+      color: #565656;
+    }
   }
-  
+
 </style>
 
 
